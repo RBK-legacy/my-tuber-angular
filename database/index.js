@@ -75,7 +75,7 @@ const getEmailAndPassword = (email, password, callback) => {
   });
 };
 
-
+// history of driver
 const getHistory = (driver_id, callback) => {
   let syntax = `SELECT * FROM history WHERE driver_id="${driver_id}"`;
   connection.query(syntax, (err, result) => {
