@@ -13,7 +13,7 @@ connection.connect((err) => {
   console.log("Database connected");
 });
 
-
+// get all drivers
 const getAllDrivers = (callback) => {
   let syntax = `SELECT * FROM drivers`;
   connection.query(syntax, (err, result) => {
@@ -25,7 +25,7 @@ const getAllDrivers = (callback) => {
   });
 };
 
-
+// get one driver
 const getADriver = (email, callback) => {
   let syntax = `SELECT email FROM drivers WHERE email= '${email}' `;
   connection.query(syntax, (err, result) => {
@@ -37,7 +37,7 @@ const getADriver = (email, callback) => {
   });
 };
 
-
+// add new driver
 const addNewDriver = (
   firstName,
   lastName,
@@ -63,7 +63,7 @@ const addNewDriver = (
   });
 };
 
-
+// put email password to the driver
 const getEmailAndPassword = (email, password, callback) => {
   let syntax = `SELECT * FROM drivers WHERE email= '${email}' AND password = '${password}' `;
   connection.query(syntax, (err, result) => {
