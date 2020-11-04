@@ -11,7 +11,8 @@ app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use(express.static(__dirname + '/../angular-client'));
+
+app.use(express.static('../../dist/angular-tuber-app'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
 
