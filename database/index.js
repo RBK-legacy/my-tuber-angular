@@ -10,10 +10,10 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) throw err;
-  console.log("Database connected");
+  console.log("Database connected successfully");
 });
 
-
+// get all drivers
 const getAllDrivers = (callback) => {
   let syntax = `SELECT * FROM drivers`;
   connection.query(syntax, (err, result) => {
@@ -25,7 +25,7 @@ const getAllDrivers = (callback) => {
   });
 };
 
-
+// get one driver
 const getADriver = (email, callback) => {
   let syntax = `SELECT email FROM drivers WHERE email= '${email}' `;
   connection.query(syntax, (err, result) => {
@@ -37,7 +37,7 @@ const getADriver = (email, callback) => {
   });
 };
 
-
+// add new driver
 const addNewDriver = (
   firstName,
   lastName,
@@ -63,7 +63,7 @@ const addNewDriver = (
   });
 };
 
-
+// put email password to the driver
 const getEmailAndPassword = (email, password, callback) => {
   let syntax = `SELECT * FROM drivers WHERE email= '${email}' AND password = '${password}' `;
   connection.query(syntax, (err, result) => {
@@ -75,7 +75,7 @@ const getEmailAndPassword = (email, password, callback) => {
   });
 };
 
-
+// history of driver
 const getHistory = (driver_id, callback) => {
   let syntax = `SELECT * FROM history WHERE driver_id="${driver_id}"`;
   connection.query(syntax, (err, result) => {
@@ -87,7 +87,7 @@ const getHistory = (driver_id, callback) => {
   });
 };
 
-
+// Getting hestory location of drivers
 const createHistory = (longtitude, lattitude, idCard, callback) => {
   let syntax = `INSERT INTO history(longitude, lattitude,driver_id) VALUES ("${longtitude}","${lattitude}",(SELECT id FROM drivers WHERE idCard=${idCard}))`;
   connection.query(syntax, (err, result) => {
