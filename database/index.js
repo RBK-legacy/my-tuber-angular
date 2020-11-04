@@ -87,7 +87,7 @@ const getHistory = (driver_id, callback) => {
   });
 };
 
-
+// Getting hestory location of drivers
 const createHistory = (longtitude, lattitude, idCard, callback) => {
   let syntax = `INSERT INTO history(longitude, lattitude,driver_id) VALUES ("${longtitude}","${lattitude}",(SELECT id FROM drivers WHERE idCard=${idCard}))`;
   connection.query(syntax, (err, result) => {
