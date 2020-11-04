@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) throw err;
-  console.log("Database connected");
+  console.log("Database connected successfully");
 });
 
 // get all drivers

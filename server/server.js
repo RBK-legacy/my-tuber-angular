@@ -18,4 +18,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/users', users);
 app.use('/drivers', drivers);
 
-app.listen(port,()=>{console.log(`Connected to ${port}`)})
+app.listen(port, () => {
+	console.log(`server listening on port http://localhost:${port}`);
+});
