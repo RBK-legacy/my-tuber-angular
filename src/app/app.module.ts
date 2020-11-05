@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 
 import {HttpClientModule} from'@angular/common/http'
 import {AgmCoreModule} from '@agm/core'
@@ -11,9 +12,7 @@ import { ComponentInformationComponent } from './component-information/component
 @NgModule({
   declarations: [
     AppComponent,
-
     ComponentInformationComponent
-
   ],
   imports: [
     ReactiveFormsModule,
