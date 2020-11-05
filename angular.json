@@ -123,6 +123,7 @@
   },
   "defaultProject": "angular-tuber-app",
   "cli": {
-    "analytics": "718df323-ada4-4d6f-91c5-b1797573ded8"
+
+    "analytics": "09df2c3f-caab-4efb-8445-f11571b3142a"
   }
 }
