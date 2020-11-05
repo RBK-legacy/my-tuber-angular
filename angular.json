@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-tuber-app"
+    }
+  },
+  "defaultProject": "angular-tuber-app",
+  "cli": {
+    "analytics": "af17c58f-57ff-4664-85ca-6035eec7ccd7"
+  }
 }
