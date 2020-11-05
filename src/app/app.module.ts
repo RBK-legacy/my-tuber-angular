@@ -17,10 +17,10 @@ import { ComponentInformationComponent } from './component-information/component
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
+      apiKey:"AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ"
     })
-
-
+//AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
+    // AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ
   ],
   providers: [],
   bootstrap: [AppComponent]
