@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
+//map: longitude and latitude
 interface Location {
   latitude:string;
   longitude:string;
