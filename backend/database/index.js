@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-  host: "remotemysql.com",
-  user: "vQ0Jh8MyUe",
-  password: "I9JMpmzQVi",
-  database: "vQ0Jh8MyUe",
+  host: "localhost",
+  user: "root",
+  password: "123456",
+  database: "tuber",
   insecureAuth: true,
 });
 
@@ -183,7 +183,7 @@ const updatePosition = (email, lat, long,callback)=>{
     }
   });
 }
- 
+
 
 module.exports.getAllDrivers = getAllDrivers;
 module.exports.addNewDriver = addNewDriver;
