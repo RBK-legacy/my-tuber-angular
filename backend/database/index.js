@@ -1,4 +1,5 @@
-const mysql = require("mysql");
+const Sequelize = require('sequelize');
+
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -113,88 +114,21 @@ const getInfo = (email, info, callback) => {
 };
 
 
-const getAllInfo = (email, callback) => {
-  let syntax = `SELECT available FROM history WHERE driver_id=(SELECT id FROM drivers WHERE email='${email}')`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-};
+const sequelize = new Sequelize('tuber1', 'root', '123456', {
+    host: 'localhost',
+    dialect: 'mysql'
 
+});
 
-const submitReq = (request,lat,long,email, callback) => {
-  let syntax = ` INSERT INTO requests(request, x, y, picker_id) VALUES('${request}',${lat},${long},(SELECT id FROM drivers WHERE email= '${email}'))`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-};
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
 
+    sequelize.sync();
 
-const getAllReq = (emailPicker, callback) => {
-  let syntax = `SELECT * FROM requests WHERE picker_id=(SELECT id FROM drivers WHERE email='${emailPicker}')`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-};
-
-
-const updateReq = (answer,emailPicker, callback) => {
-  let syntax = `UPDATE requests SET request = '${answer}' WHERE picker_id=(SELECT id FROM drivers WHERE email='${emailPicker}')`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-};
-
-
-const updateInfoRes = (email, callback) => {
-  let syntax = ` UPDATE history SET available = 'no' WHERE driver_id=(SELECT id FROM drivers WHERE email= '${email}')`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-};
-
-
-const updatePosition = (email, lat, long,callback)=>{
-  let syntax = ` UPDATE drivers SET latt = ${lat} , longi = ${long} WHERE email= '${email}'`;
-  connection.query(syntax, (err, result) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      callback(null, result);
-    }
-  });
-}
-
-
-module.exports.getAllDrivers = getAllDrivers;
-module.exports.addNewDriver = addNewDriver;
-module.exports.getADriver = getADriver;
-module.exports.getEmailAndPassword = getEmailAndPassword;
-module.exports.getHistory = getHistory;
-module.exports.createHistory = createHistory;
-module.exports.getInfo = getInfo;
-module.exports.submitReq = submitReq;
-module.exports.getAllReq = getAllReq;
-module.exports.updateReq = updateReq;
-module.exports.getAllInfo = getAllInfo;
-module.exports.updateInfoRes = updateInfoRes;
-module.exports.updatePosition = updatePosition;
+    module.exports = sequelize;

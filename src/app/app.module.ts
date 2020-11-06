@@ -8,12 +8,21 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from'@angular/common/http'
 import {AgmCoreModule} from '@agm/core'
 import { ComponentInformationComponent } from './component-information/component-information.component';
+import { RouterModule } from '@angular/router';
+import { UserComponent } from './user/user.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     HomeComponent,
     ComponentInformationComponent
+    SignupComponent,
+    LoginComponent,
+    HomeComponent, 
+    ComponentInformationComponent, AboutUsComponent
+
   ],
 
   imports: [
@@ -23,6 +32,16 @@ import { ComponentInformationComponent } from './component-information/component
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([{path: 'user', component: UserComponent}, 
+                          {path: '', component:HomeComponent}, 
+                          {path: 'logIn', component: LoginComponent}, 
+                          {path: 'signUp', component: SignupComponent}, 
+                          {path: 'information', component: ComponentInformationComponent },
+                          {path: 'AboutUs', component: AboutUsComponent }]),
+
+
+
     AgmCoreModule.forRoot({
       apiKey : "AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
     })
@@ -32,4 +51,8 @@ import { ComponentInformationComponent } from './component-information/component
   providers: [],
   bootstrap: [AppComponent,HomeComponent],
 })
+
 export class AppModule { }
+
+
+
