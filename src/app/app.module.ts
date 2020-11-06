@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from'@angular/common/http'
 import {AgmCoreModule} from '@agm/core'
 import { ComponentInformationComponent } from './component-information/component-information.component';
@@ -20,12 +20,14 @@ import { ComponentInformationComponent } from './component-information/component
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
+      apiKey : "AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ"
     })
-
-
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
