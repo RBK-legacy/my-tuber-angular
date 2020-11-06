@@ -6,5 +6,6 @@ import {HomeComponent} from "src/app/home/home.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-tuber-app';
+
+  myimage: string = "assets/images/car.png"
 }
