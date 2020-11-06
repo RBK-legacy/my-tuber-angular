@@ -31,10 +31,12 @@ import { ComponentInformationComponent } from './component-information/component
 
 
     AgmCoreModule.forRoot({
-      apiKey : "AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ"
+
+      apiKey:"AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ"
+
     })
-
-
+//AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
+    // AIzaSyBMXPq1pAxJSH3_qze7WNe_stCAKcjCdlQ
   ],
   providers: [],
   bootstrap: [AppComponent]
