@@ -8,7 +8,7 @@ import { MapsService } from '../maps.service';
   styleUrls: ['./component-information.component.css']
 })
 export class ComponentInformationComponent {
-
+//lagitude //longitude
   lat: string='';
   lng: string='';
   location:Object;
