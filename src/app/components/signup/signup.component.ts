@@ -16,8 +16,7 @@ export class SignupComponent implements OnInit {
     driveLicense : '',
     car : '',
     location : '',
-    km : '',
-    gender : ''
+    km : ''
   };
 
   constructor(private driverService : DriverService) { }
@@ -35,8 +34,7 @@ export class SignupComponent implements OnInit {
       driveLicense : this.driver.driveLicense,
       car : this.driver.car,
       location : this.driver.location,
-      km : this.driver.km,
-      gender : this.driver.gender
+      km : this.driver.km
     }
     console.log(data);
     this.driverService.createRegister(data)
