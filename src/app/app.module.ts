@@ -14,6 +14,7 @@ import {AgmCoreModule} from '@agm/core';
 import { ComponentInformationComponent } from './component-information/component-information.component';
 import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { UserComponent } from './user/user.component';
     SignupComponent,
     LoginComponent,
     HomeComponent, 
-    ComponentInformationComponent
+    ComponentInformationComponent, AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,12 @@ import { UserComponent } from './user/user.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{path: 'user', component: UserComponent}, {path: '', component:HomeComponent}, {path: 'logIn', component: LoginComponent}, {path: 'signUp', component: SignupComponent}, {path: 'information', component: ComponentInformationComponent }]),
+    RouterModule.forRoot([{path: 'user', component: UserComponent}, 
+                          {path: '', component:HomeComponent}, 
+                          {path: 'logIn', component: LoginComponent}, 
+                          {path: 'signUp', component: SignupComponent}, 
+                          {path: 'information', component: ComponentInformationComponent },
+                          {path: 'AboutUs', component: AboutUsComponent }]),
 
 
     AgmCoreModule.forRoot({
