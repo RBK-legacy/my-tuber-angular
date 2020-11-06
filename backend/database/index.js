@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "12345",
+  password: "123456",
   database: "tuber",
   insecureAuth: true,
 });
@@ -183,7 +183,7 @@ const updatePosition = (email, lat, long,callback)=>{
     }
   });
 }
- 
+
 
 module.exports.getAllDrivers = getAllDrivers;
 module.exports.addNewDriver = addNewDriver;
