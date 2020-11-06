@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" class="form-control" placeholder="search for a car">
+
+    <label for="orders">type of the car </label><br>
+    <select formControlName="orders" id="orders">
+      <option *ngFor="let order of orders; let i = index" [value]="orders[i].id">
+        {{orders[i].name}}
+      </option>
+    </select>
+  
+    <br><br>
+    <button>submit</button>
+    
+  </form>
