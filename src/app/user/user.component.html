@@ -1,14 +1,17 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-    <input type="text" class="form-control" placeholder="search for a car">
+<div >
+<form [formGroup]="form" (ngSubmit)="submit()" >
+  <input type="text" placeholder="Put your location" ><br><br>
 
-    <label for="orders">type of the car </label><br>
-    <select formControlName="orders" id="orders">
-      <option *ngFor="let order of orders; let i = index" [value]="orders[i].id">
-        {{orders[i].name}}
-      </option>
-    </select>
+  <label for="orders">choose a car </label><br><br>
   
-    <br><br>
-    <button>submit</button>
-    
-  </form>
+  <select >
+    <option value="1">Confort car </option>
+    <option value="2">Normal car </option>
+    <option value="3">Safe car </option>
+  </select>
+  
+  <br><br>
+  <button id="btn">submit</button>
+ 
+</form>
+</div>
