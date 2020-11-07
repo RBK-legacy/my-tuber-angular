@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   driver = {
     email: '',
-    password: '',
+    password: ''
   };
   constructor(
     private driverService: DriverService,
