@@ -1,37 +1,42 @@
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Find Drivers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="#" >About Us</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        
-        <button class="btn btn-outline-success" type="submit">Join us</button>
-      </form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+            <img src="/src/app/Tuber.png" alt="">
+          </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <img width="80" alt="Angular Logo"
+    src="https://cdn5.vectorstock.com/i/1000x1000/30/89/mobile-phone-navigation-car-location-vector-11883089.jpg" />
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/" style="font-size: xx-large;">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user" style="font-size: xx-large;">find Drivers</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/AboutUs" style="font-size: xx-large;">About Us</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logIn" style="font-size: xx-large;">Join Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-  
-  <br>
-  <div class="image">
-    <img [src]="myImage" alt="" sizes="192x192" >
-  </div>
-  
-  <router-outlet></router-outlet>
+  </nav>
+
+  <!-- <br>
+  <div>
+    <img [src]="myImage" alt="" >
+  </div> -->
+
+<router-outlet></router-outlet>
 
 
           
