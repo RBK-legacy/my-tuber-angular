@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DriverService} from 'src/app/services/driver.service';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -16,11 +17,11 @@ export class SignupComponent implements OnInit {
     driveLicense : '',
     car : '',
     location : '',
-    km : '',
-    gender : ''
+    km : ''
   };
 
-  constructor(private driverService : DriverService) { }
+  constructor(private driverService : DriverService,private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
   };
@@ -35,12 +36,13 @@ export class SignupComponent implements OnInit {
       driveLicense : this.driver.driveLicense,
       car : this.driver.car,
       location : this.driver.location,
-      km : this.driver.km,
-      gender : this.driver.gender
+      km : this.driver.km
     }
     console.log(data);
     this.driverService.createRegister(data)
-    .subscribe(res => console.log(res))
+    .subscribe((res) => console.log(res));
+    this.driverService.sendEmail(data)
+    .subscribe((res) => {console.log(res); this.router.navigate(['/logIn',])})
   };
 
 }

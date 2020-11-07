@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapsService } from '../maps.service';
-
+import { DriverService } from '../services/driver.service'
 
 @Component({
   selector: 'app-component-information',
@@ -12,8 +12,10 @@ export class ComponentInformationComponent {
   lat: string='';
   lng: string='';
   location:Object;
+ obj = {request : "accept"}
 
-  constructor(private map: MapsService) { }
+
+  constructor(private map: MapsService, private driverService :  DriverService) { }
 
   ngOnInit() {
     this.map.getLocation().subscribe(data =>{
@@ -21,7 +23,12 @@ export class ComponentInformationComponent {
       this.lat=data.latitude;
       this.lng= data.longitude;
     })
-
+  }
+   
+  driverRequest(event: any){//we use this fn on click to send req.body.request to the server
+    this.obj.request ="accept"
+    this.driverService.request(this.obj)
+    
   }
 
 }

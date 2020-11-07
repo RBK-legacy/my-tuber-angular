@@ -12,10 +12,20 @@ export class DriverService {
   constructor(private http: HttpClient) { }
 
   createLogin(data): Observable<any> {
-    return this.http.post(baseUrl + '/signin', data);
+    return this.http.post(baseUrl + '/login', data);
   }
 
   createRegister(data): Observable<any> {
     return this.http.post(baseUrl + '/signup', data);
   }
+
+  sendEmail(data): Observable<any> {
+    return this.http.post(baseUrl + '/sendemail',data)
+  }
+
+  request(data): Observable<any> {
+    return this.http.post(baseUrl + '/request/',data)
+  }
 }
+
+
