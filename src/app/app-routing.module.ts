@@ -20,7 +20,6 @@ import { UserComponent } from './user/user.component';
 
 
 
-const routes: Routes = [];
 
 
 
