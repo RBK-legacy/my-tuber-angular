@@ -13,6 +13,7 @@ export class ComponentInformationComponent {
   lng: string='';
   location:Object;
  obj = {request : "accept"}
+ obj1={request : "do not accept"}
 
 
   constructor(private map: MapsService, private driverService :  DriverService) { }
@@ -26,9 +27,13 @@ export class ComponentInformationComponent {
   }
    
   driverRequest(event: any){//we use this fn on click to send req.body.request to the server
-    this.obj.request ="accept"
-    this.driverService.request(this.obj)
-    
+    this.obj.request ="accept";
+    this.obj1.request ="do not accept";
+    this.driverService.request(this.obj);
+    this.driverService.request(this.obj1);
+
   }
+  
+
 
 }
