@@ -5,7 +5,8 @@ import {Router} from '@angular/router';
 import {
   faFacebook,
   faTwitter,
-  faInstagram
+  faInstagram,
+  faGoogle
 } from "@fortawesome/free-brands-svg-icons";
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
   faFacebook = faFacebook;
   faTwitter = faTwitter;
   faInstagram = faInstagram;
+  faGoogle=faGoogle;
   constructor() {}
 
   ngOnInit(): void {

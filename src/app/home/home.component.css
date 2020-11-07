@@ -30,7 +30,7 @@ h3 {
     margin-top: -100px;
     position: absolute;
     text-align: center;
-    top: 70%;
+    top: 55%;
     width: 100%;
 }
 .social-container{
@@ -39,7 +39,7 @@ h3 {
     margin-top: -100px;
     position: absolute;
     text-align: center;
-    top: 100%;
+    top: 80%;
     width: 100%;
 }
 h4{
@@ -58,12 +58,35 @@ h5{ left: 250px;
     text-align: center;
     top: 30%;
     width: 100%;}
-
-
-fa-icon{
-     position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%
+    .p1{
+        font-size: 50px;
+        position: relative;
+        left:680px;
+        top: 425px;
+        width: 100%;
     }
-
+    .p2{
+        font-size: 50px;
+        position: relative;
+        left:500px;
+        top: 350px;
+        width: 100%;
+    }
+    .p3{
+        font-size: 50px;
+        position: relative;
+        left:850px;
+        top:  275px;
+        width: 100%;
+    }
+    .p4{  font-size: 50px;
+        position: relative;
+        left:1000px;
+        top:200px;
+        width: 100%;
+    }
+    .p5{
+        position: relative;
+        left:-250px;
+        top: 300px;
+    }

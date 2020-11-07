@@ -36,15 +36,17 @@ router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
   if (!driver) return res.send('email is wrong')
   const validPass = await bcrypt.compare(req.body.password, driver.password)
-  if (!validPass) return res.status(400).send('password is wrong')
-  const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
-  res.header('auth-token', token).send(token)
+  if (!validPass) return res.json({"message" : "signup"})
+  res.json("logged in");
+  // const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
+  // res.header('auth-token', token).send(token)
+
 })
 
 
 // Post request sendEmail with information drivers
 router.post('/sendemail', async (req, res) => {
-    await Doctors.findAll({ where: { email: req.body.email } }).then((obj) => {
+    await Drivers.findAll({ where: { email: req.body.email } }).then((obj) => {
         nodemailer.createTestAccount((err, email) => {
             var transporter = nodemailer.createTransport(
                 smtpTransport({
@@ -53,8 +55,8 @@ router.post('/sendemail', async (req, res) => {
                     secure: false,
                     host: "smtp.gmail.com",
                     auth: {
-                        user: "",
-                        pass: "",
+                        user: "tuber.tunisie@gmail.com",
+                        pass: "tuber05112020",
                     },
                     tls: {
                         rejectUnauthorized: false,
@@ -63,9 +65,9 @@ router.post('/sendemail', async (req, res) => {
             );
 
             let mailOptions = {
-                from: "",
+                from: "tuber.tunisie@gmail.com",
                 to: `${req.body.email}`,
-                subject: "my Doc application",
+                subject: "my tuber application",
                 text: `thanks u for sign in .`,
             };
             transporter.sendMail(mailOptions, (err, info) => {
