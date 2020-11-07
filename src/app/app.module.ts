@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from'@angular/common/http'
 import {AgmCoreModule} from '@agm/core'
 import { ComponentInformationComponent } from './component-information/component-information.component';
@@ -21,9 +21,8 @@ import { LoginComponent } from './components/login/login.component';
     ComponentInformationComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent, 
-    ComponentInformationComponent, 
-    AboutUsComponent
+    AboutUsComponent,
+    UserComponent,
 
   ],
 
@@ -33,7 +32,7 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    // FontAwesomeModule,
+    FontAwesomeModule,
     RouterModule.forRoot([{path: 'user', component: UserComponent}, 
                           {path: '', component:HomeComponent}, 
                           {path: 'logIn', component: LoginComponent}, 
@@ -53,7 +52,7 @@ import { LoginComponent } from './components/login/login.component';
   bootstrap: [AppComponent,HomeComponent],
 })
 
-export class AppModule { }
+export class AppModule {}
 
 
 
