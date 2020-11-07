@@ -198,3 +198,4 @@ module.exports.updateReq = updateReq;
 module.exports.getAllInfo = getAllInfo;
 module.exports.updateInfoRes = updateInfoRes;
 module.exports.updatePosition = updatePosition;
+//change to sequilize
