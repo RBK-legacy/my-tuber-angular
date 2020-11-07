@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MapsService } from './maps.service';
+import { DriverService } from './driver.service';
 
-describe('MapsService', () => {
-  let service: MapsService;
+describe('DriverService', () => {
+  let service: DriverService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MapsService);
+    service = TestBed.inject(DriverService);
   });
 
   it('should be created', () => {
