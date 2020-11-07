@@ -26,6 +26,8 @@ import { LoginComponent } from './components/login/login.component';
      AboutUsComponent,
     UserComponent
 
+
+
   ],
 
   imports: [
@@ -46,12 +48,16 @@ import { LoginComponent } from './components/login/login.component';
 
     AgmCoreModule.forRoot({
 
-      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
-    
-    }),
+      apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
 
-    
-    
+
+
+
+
+    })
+
+
+
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
   ],
   providers: [],
