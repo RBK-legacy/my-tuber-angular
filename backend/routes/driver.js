@@ -28,9 +28,11 @@ router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
   if (!driver) return res.send('email is wrong')
   const validPass = await bcrypt.compare(req.body.password, driver.password)
-  if (!validPass) return res.status(400).send('password is wrong')
-  const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
-  res.header('auth-token', token).send(token)
+  if (!validPass) return res.json({"message" : "signup"})
+  res.json("logged in");
+  // const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
+  // res.header('auth-token', token).send(token)
+
 })
 
 router.post('/sendemail', async (req, res) => {

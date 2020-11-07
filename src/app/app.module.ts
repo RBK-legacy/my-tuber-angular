@@ -23,8 +23,10 @@ import { LoginComponent } from './components/login/login.component';
     ComponentInformationComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent,
-    ComponentInformationComponent, AboutUsComponent
+
+    HomeComponent, 
+    ComponentInformationComponent, AboutUsComponent,
+    UserComponent
 
   ],
 
