@@ -9,14 +9,20 @@ const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 dotenv.config();
 
+
+// Get request all of drivers
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
 
+
+// Get request the user find the drivers
 router.get('/:id', async (req, res) => {
   await Drivers.findByPk(req.params.id).then((users) => res.json(users))
 })
 
+
+// Post request driver to singUp
 router.post('/signup', async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(req.body.password, salt)
@@ -24,6 +30,8 @@ router.post('/signup', async (req, res) => {
     .then((driver) => res.json(driver))
 })
 
+
+// Post request driver to signIn
 router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
   if (!driver) return res.send('email is wrong')
@@ -35,6 +43,8 @@ router.post('/login', async (req, res) => {
 
 })
 
+
+// Post request sendEmail with information drivers
 router.post('/sendemail', async (req, res) => {
     await Drivers.findAll({ where: { email: req.body.email } }).then((obj) => {
         nodemailer.createTestAccount((err, email) => {

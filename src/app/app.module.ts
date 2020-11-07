@@ -47,17 +47,18 @@ import { LoginComponent } from './components/login/login.component';
     AgmCoreModule.forRoot({
 
       apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
+    
+    }),
 
-    })
     
     
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
   ],
   providers: [],
-  bootstrap: [AppComponent,HomeComponent],
+  bootstrap: [AppComponent,HomeComponent]
 })
 
-export class AppModule { }
+export class AppModule {}
 
 
 
