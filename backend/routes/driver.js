@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
 })
 
 router.post('/sendemail', async (req, res) => {
-    await Doctors.findAll({ where: { email: req.body.email } }).then((obj) => {
+    await Drivers.findAll({ where: { email: req.body.email } }).then((obj) => {
         nodemailer.createTestAccount((err, email) => {
             var transporter = nodemailer.createTransport(
                 smtpTransport({
@@ -43,8 +43,8 @@ router.post('/sendemail', async (req, res) => {
                     secure: false,
                     host: "smtp.gmail.com",
                     auth: {
-                        user: "",
-                        pass: "",
+                        user: "tuber.tunisie@gmail.com",
+                        pass: "tuber05112020",
                     },
                     tls: {
                         rejectUnauthorized: false,
@@ -53,9 +53,9 @@ router.post('/sendemail', async (req, res) => {
             );
 
             let mailOptions = {
-                from: "",
+                from: "tuber.tunisie@gmail.com",
                 to: `${req.body.email}`,
-                subject: "my Doc application",
+                subject: "my tuber application",
                 text: `thanks u for sign in .`,
             };
             transporter.sendMail(mailOptions, (err, info) => {
