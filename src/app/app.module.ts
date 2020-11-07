@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 
 import {AgmCoreModule} from '@agm/core';
 import { ComponentInformationComponent } from './component-information/component-information.component';
+import { RouterModule } from '@angular/router';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { ComponentInformationComponent } from './component-information/component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot([{path: 'user', component: UserComponent}, {path: '', component:HomeComponent}, {path: 'logIn', component: LoginComponent}, {path: 'signUp', component: SignupComponent}, {path: 'information', component: ComponentInformationComponent }]),
 
 
     AgmCoreModule.forRoot({
@@ -41,5 +44,6 @@ import { ComponentInformationComponent } from './component-information/component
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 
