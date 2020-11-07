@@ -18,4 +18,8 @@ export class DriverService {
   createRegister(data): Observable<any> {
     return this.http.post(baseUrl + '/signup', data);
   }
+
+  sendEmail(data): Observable<any> {
+    return this.http.post(baseUrl + '/sendemail',data)
+  }
 }
