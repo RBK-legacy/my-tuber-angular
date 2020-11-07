@@ -11,13 +11,13 @@ import { ComponentInformationComponent } from './component-information/component
 import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
-
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-
     HomeComponent,
-    ComponentInformationComponent
+    ComponentInformationComponent,
     SignupComponent,
     LoginComponent,
     HomeComponent, 
@@ -46,7 +46,7 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
       apiKey : "AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
     })
     
-    
+    // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
   ],
   providers: [],
   bootstrap: [AppComponent,HomeComponent],
