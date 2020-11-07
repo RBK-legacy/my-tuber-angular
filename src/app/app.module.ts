@@ -23,7 +23,8 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     SignupComponent,
     LoginComponent,
     HomeComponent, 
-    ComponentInformationComponent, AboutUsComponent
+    ComponentInformationComponent, AboutUsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
