@@ -22,7 +22,7 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent, 
+    HomeComponent,
     ComponentInformationComponent, AboutUsComponent
   ],
   imports: [
@@ -31,17 +31,17 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([{path: 'user', component: UserComponent}, 
-                          {path: '', component:HomeComponent}, 
-                          {path: 'logIn', component: LoginComponent}, 
-                          {path: 'signUp', component: SignupComponent}, 
+    RouterModule.forRoot([{path: 'user', component: UserComponent},
+                          {path: '', component:HomeComponent},
+                          {path: 'logIn', component: LoginComponent},
+                          {path: 'signUp', component: SignupComponent},
                           {path: 'information', component: ComponentInformationComponent },
                           {path: 'AboutUs', component: AboutUsComponent }]),
 
 
     AgmCoreModule.forRoot({
 
-      apiKey:""
+      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
 
     })
 //AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
