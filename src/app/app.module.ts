@@ -24,9 +24,9 @@ import { LoginComponent } from './components/login/login.component';
     SignupComponent,
     LoginComponent,
 
-    HomeComponent,
-    ComponentInformationComponent, AboutUsComponent,
-    UserComponent
+    AboutUsComponent,
+    UserComponent,
+
 
   ],
 
@@ -53,14 +53,19 @@ import { LoginComponent } from './components/login/login.component';
 
 
 
+   
+    
     })
+
+
+ 
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
   ],
   providers: [],
-  bootstrap: [AppComponent,HomeComponent],
+  bootstrap: [AppComponent,HomeComponent]
 })
 
-export class AppModule { }
+export class AppModule {}
 
 
 
