@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import {HttpClientModule} from'@angular/common/http'
-import {AgmCoreModule} from '@agm/core'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 import { ComponentInformationComponent } from './component-information/component-information.component';
 import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
@@ -15,18 +15,18 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { DriversComponent } from './drivers/drivers.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,  
+    HomeComponent,
     SignupComponent,
     LoginComponent,
     ComponentInformationComponent,
+
      AboutUsComponent,
     UserComponent,
     DriversComponent,
+
 
 
 
@@ -39,6 +39,7 @@ import { DriversComponent } from './drivers/drivers.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+
     RouterModule.forRoot([{path: 'user', component: UserComponent},
                           {path: '', component:HomeComponent},
                           {path: 'logIn', component: LoginComponent},
@@ -49,21 +50,19 @@ import { DriversComponent } from './drivers/drivers.component';
 
 
 
+
     AgmCoreModule.forRoot({
-
-      apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
-
+      apiKey: 'AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc'
     }),
 
 
+  ],
 
-    // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-    ],
+   
+
   providers: [],
-  bootstrap: [AppComponent,HomeComponent]
+  bootstrap: [AppComponent, HomeComponent]
+
 })
 
 export class AppModule {}
-
-
-
