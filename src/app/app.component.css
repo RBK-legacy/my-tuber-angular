@@ -1,3 +1,15 @@
 image{
     height: 500px;
 }
+
+.tub {
+    font-weight: 500;
+    color: orange;
+    font-style: initial; 
+    margin-left: 10px;
+    font-size: 80px;
+}
+
+#tab {
+    color: orange;
+}
