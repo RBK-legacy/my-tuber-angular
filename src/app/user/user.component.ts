@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MapsService } from '../maps.service';
 import { of } from 'rxjs';
+import { MapsService } from '../maps.service';
 // import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-user',
@@ -12,6 +12,8 @@ export class UserComponent  {
   form: FormGroup;
   orders = [];
   value='';
+
+  
   lat: string='';
   lng: string='';
   location:Object;
@@ -24,6 +26,8 @@ export class UserComponent  {
       this.form.controls.orders.patchValue(this.orders[0].id);
     });
   }
+
+
   getOrders() {
     return [
       { id: '1', name: 'Normal car' },
@@ -31,9 +35,13 @@ export class UserComponent  {
       { id: '3', name: 'Safe car' },
     ]
   }
+
+
   submit() {
     console.log(this.form.value);
   }
+
+
   ngOnInit() {
     this.map.getLocation().subscribe(data =>{
       console.log(data);
