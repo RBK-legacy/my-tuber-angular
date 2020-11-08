@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { DriversComponent } from './drivers/drivers.component';
 
 
 
@@ -24,7 +25,8 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent,
     ComponentInformationComponent,
      AboutUsComponent,
-    UserComponent
+    UserComponent,
+    DriversComponent
 
 
 
@@ -42,7 +44,8 @@ import { LoginComponent } from './components/login/login.component';
                           {path: 'logIn', component: LoginComponent},
                           {path: 'signUp', component: SignupComponent},
                           {path: 'information', component: ComponentInformationComponent },
-                          {path: 'AboutUs', component: AboutUsComponent }]),
+                          {path: 'AboutUs', component: AboutUsComponent },
+                          {path:'driver', component: DriversComponent}]),
 
 
 

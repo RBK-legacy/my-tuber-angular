@@ -7,6 +7,7 @@ const verifyToken = require('./verification')
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+const { threadId } = require('worker_threads');
 dotenv.config();
 
 
@@ -14,7 +15,12 @@ dotenv.config();
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
-
+router.get('/specif',async(req,res) => {
+    await Drivers.findOne({  type :req.body.type })
+    .then((res)=> res.send(res))
+    .catch(err)
+    console.log (err)
+})
 
 // Get request the user find the drivers
 router.get('/:id', async (req, res) => {
@@ -28,6 +34,7 @@ router.post('/signup', async (req, res) => {
   const hashPassword = await bcrypt.hash(req.body.password, salt)
   await Drivers.create({ firstName: req.body.firstName, lastName: req.body.lastName, password: hashPassword, email: req.body.email, yearOfBirth: req.body.yearOfBirth, idCard: req.body.idCard, driveLicense: req.body.driveLicense, car: req.body.car, location: req.body.location, km: req.body.km })
     .then((driver) => res.json(driver))
+    .catch(err=>console.log(err));
 })
 
 

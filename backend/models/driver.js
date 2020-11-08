@@ -14,7 +14,8 @@ Drivers.init({
   km: Sequelize.INTEGER,
   rate: Sequelize.INTEGER,
   late: Sequelize.REAL,
-  longi: Sequelize.REAL
+  longi: Sequelize.REAL,
+
 }, { sequelize, modelName: 'drivers' });
 
 module.exports = Drivers;
