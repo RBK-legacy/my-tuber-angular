@@ -18,12 +18,6 @@ import { UserComponent } from './user/user.component';
 
 
 
-
-
-const routes: Routes = [];
-
-
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
