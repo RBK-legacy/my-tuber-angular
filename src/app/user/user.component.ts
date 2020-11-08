@@ -9,7 +9,18 @@ import { of } from 'rxjs';
 export class UserComponent  {
   form: FormGroup;
   orders = [];
-  constructor(private formBuilder: FormBuilder) {
+
+  value='';
+
+  
+
+  lat: string='';
+  lng: string='';
+  location:Object;
+
+  constructor(private formBuilder: FormBuilder, private map: MapsService) {
+
+
     this.form = this.formBuilder.group({
       orders: ['']
     });

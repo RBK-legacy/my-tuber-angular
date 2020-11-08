@@ -15,6 +15,7 @@ h1{
     width: 100%;
 margin-left: -740px;
     font-size: 110px;
+
 }
 h2{ 
        left: 0;
@@ -25,7 +26,7 @@ h2{
     top: 45%;
     width: 100%; 
     font-size: 80px; 
-    margin-left: 760px; 
+    margin-left: -760px; 
 }
 
 h3 {
@@ -84,6 +85,7 @@ h5{ left: 250px;
         left:850px;
         top:  275px;
         width: 100%;
+        
     }
     .p4{  font-size: 50px;
         position: relative;
@@ -98,14 +100,14 @@ h5{ left: 250px;
     font-size: 300px; 
     }
 .a{
-    margin-left: 600px;
+    margin-left: -990px;
     font-size: 60px; 
     margin-top: -30px;   
 }
 .c{
-    margin-left:610px;
+    margin-left:-490px;
     font-size: 60px;
-   margin-top: -40px;   
+   margin-top: -10px;   
 }
 .x{
     margin-top: 330px; 
@@ -118,4 +120,5 @@ h5{ left: 250px;
 .socialMedia{
     margin-left: 1180px;
     margin-top:350px;
+    
 }
