@@ -50,16 +50,12 @@ import { LoginComponent } from './components/login/login.component';
 
       apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
 
-
-
-
-
-    })
+    }),
 
 
 
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-    })],
+    ],
   providers: [],
   bootstrap: [AppComponent,HomeComponent]
 })

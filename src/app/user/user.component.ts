@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MapsService } from '../maps.service';
 import { of } from 'rxjs';
 
 @Component({
@@ -12,7 +13,11 @@ export class UserComponent  {
   form: FormGroup;
   orders = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  lat: string='';
+  lng: string='';
+  location:Object;
+
+  constructor(private formBuilder: FormBuilder, private map: MapsService) {
     this.form = this.formBuilder.group({
       orders: ['']
     });
@@ -38,5 +43,14 @@ export class UserComponent  {
   submit() {
     console.log(this.form.value);
   }
+
+  ngOnInit() {
+    this.map.getLocation().subscribe(data =>{
+      console.log(data);
+      this.lat=data.latitude;
+      this.lng= data.longitude;
+    })
+  }
+  
 
 }
