@@ -1,9 +1,4 @@
-.title{
-    text-align: center;
-    font-size: -webkit-xxx-large;
-    align-items: normal;
-    color: cornflowerblue;
-}
+
 h3{
   font-family: cursive;
     font-weight: bold;
@@ -14,7 +9,7 @@ h3{
 /* *******************************************buttons */
 .but1{
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #00b3b3 100%);
 	background-color:#7892c2;
 	border-radius:10px;
 	border:1px solid #062066;
@@ -27,7 +22,7 @@ h3{
 	text-decoration:none;
   text-shadow:0px 1px 0px #283966;
   margin-bottom: 50px;
-  margin-left: 700px;
+  margin-left: 720px;
   margin-top: 120px;
 }
 .but1:hover {
@@ -120,7 +115,7 @@ h3{
   } */
   .but2 {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #00b3b3 100%);
 	background-color:#7892c2;
 	border-radius:10px;
 	border:1px solid #062066;
@@ -145,7 +140,7 @@ h3{
 
 .but3 {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #00b3b3 100%);
 	background-color:#7892c2;
 	border-radius:10px;
 	border:1px solid #062066;
@@ -157,7 +152,7 @@ h3{
 	padding:12px 37px;
 	text-decoration:none;
   text-shadow:0px 1px 0px #283966;
-  margin-left: 242px;
+  margin-left: 240px;
 }
 .but3:hover {
 	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
@@ -169,7 +164,7 @@ h3{
 }
 .but4 {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #7892c2 5%, #00b3b3 100%);
 	background-color:#7892c2;
 	border-radius:10px;
 	border:1px solid #062066;
@@ -194,8 +189,8 @@ h3{
 }
 /* ********************map */
 agm-map{
-    height: 330px;
-    width: 1510px;
+    height: 500px;
+    width: 2300px;
     
    
 
