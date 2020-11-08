@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DriverService } from '../../services/driver.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   driver = {
     email: '',
-    password: ''
+    password: '',
+    responseToTheUser:'',
+    errorMessage:''
   };
   constructor(
     private driverService: DriverService,
@@ -26,8 +29,24 @@ export class LoginComponent implements OnInit {
     };
     console.log(data);
     this.driverService.createLogin(data).subscribe((res) => {
+      if (res.status === 404) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops',
+          text: `this user are not exist`,
+        });
+      } else if (res.status === 500) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops',
+          text: `password wrong`,
+        });
+      } else {
       console.log(res);
+      window.localStorage.setItem("token",res.token);
+      window.localStorage.setItem("id",res.id);
+      console.log(window.localStorage)
       this.router.navigate(['/information']);
-    });
+    }});
   }
 }
