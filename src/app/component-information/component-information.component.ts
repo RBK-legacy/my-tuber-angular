@@ -13,9 +13,11 @@ export class ComponentInformationComponent {
   lng: string='';
   location:Object;
  obj = {request : "accept"}
+ obj1={request : "do not accept"}
 
 
   constructor(private map: MapsService, private driverService :  DriverService) { }
+show: boolean = false;
 
   ngOnInit() {
     this.map.getLocation().subscribe(data =>{
@@ -26,10 +28,26 @@ export class ComponentInformationComponent {
   }
    
   driverRequest(event: any){//we use this fn on click to send req.body.request to the server
-    this.obj.request ="accept"
-    this.driverService.request(this.obj)
-    
+    this.obj.request ="accept";
+    this.driverService.request(this.obj);
+
   }
+
+
+  
+driverRequest1(event: any){//we use this fn on click to send req.body.request to the server
+  this.obj1.request =" do not accept";
+    this.driverService.request(this.obj1);
+
+}
+onClick(event){
+  this.show = true;
+}
+
+onClick1(event){
+  this.show = false;
+}
+
 }
 
 
