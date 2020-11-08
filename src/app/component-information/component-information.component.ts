@@ -25,13 +25,13 @@ export class ComponentInformationComponent {
       this.lng= data.longitude;
     })
   }
-   
+
   driverRequest(event: any){//we use this fn on click to send req.body.request to the server
     this.obj.request ="accept";
     this.driverService.request(this.obj);
 
   }
-  
+
 driverRequest1(e: any){//we use this fn on click to send req.body.request to the server
   this.obj1.request =" do not accept";
     this.driverService.request(this.obj1);
