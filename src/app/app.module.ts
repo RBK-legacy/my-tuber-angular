@@ -55,7 +55,7 @@ import { LoginComponent } from './components/login/login.component';
     
     
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-  ],
+    })],
   providers: [],
   bootstrap: [AppComponent,HomeComponent],
 })
