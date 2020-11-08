@@ -7,16 +7,28 @@ const verifyToken = require('./verification')
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+const { threadId } = require('worker_threads');
 dotenv.config();
 
+
+// Get request all of drivers
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
+router.get('/specif',async(req,res) => {
+    await Drivers.findOne({  type :req.body.type })
+    .then((res)=> res.send(res))
+    .catch(err)
+    console.log (err)
+})
 
+// Get request the user find the drivers
 router.get('/:id', async (req, res) => {
   await Drivers.findByPk(req.params.id).then((users) => res.json(users))
 })
 
+
+// Post request driver to singUp
 router.post('/signup', async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashPassword = await bcrypt.hash(req.body.password, salt)
@@ -24,15 +36,21 @@ router.post('/signup', async (req, res) => {
     .then((driver) => res.json(driver))
 })
 
+
+// Post request driver to signIn
 router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
   if (!driver) return res.send('email is wrong')
   const validPass = await bcrypt.compare(req.body.password, driver.password)
-  if (!validPass) return res.status(400).send('password is wrong')
-  const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
-  res.header('auth-token', token).send(token)
+  if (!validPass) return res.json({"message" : "signup"})
+  res.json("logged in");
+  // const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
+  // res.header('auth-token', token).send(token)
+
 })
 
+
+// Post request sendEmail with information drivers
 router.post('/sendemail', async (req, res) => {
     await Drivers.findAll({ where: { email: req.body.email } }).then((obj) => {
         nodemailer.createTestAccount((err, email) => {
