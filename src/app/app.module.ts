@@ -19,12 +19,14 @@ import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ComponentInformationComponent,
+    HomeComponent,  
     SignupComponent,
     LoginComponent,
-    AboutUsComponent,
-    UserComponent,
+    ComponentInformationComponent,
+     AboutUsComponent,
+    UserComponent
+
+
 
   ],
 
@@ -35,7 +37,6 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
     RouterModule.forRoot([{path: 'user', component: UserComponent},
                           {path: '', component:HomeComponent},
                           {path: 'logIn', component: LoginComponent},
@@ -47,14 +48,18 @@ import { LoginComponent } from './components/login/login.component';
 
     AgmCoreModule.forRoot({
 
-      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
-    
-    }),
+      apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
 
-    
-    
+
+
+
+
+    })
+
+
+
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-  ],
+    })],
   providers: [],
   bootstrap: [AppComponent,HomeComponent]
 })
