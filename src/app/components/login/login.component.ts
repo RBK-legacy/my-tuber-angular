@@ -10,11 +10,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   driver = {
     email: '',
-    password: '',
+    password: ''
   };
-  constructor(private driverService: DriverService,  private route: ActivatedRoute,
-    private router: Router) {}
-  
+  constructor(
+    private driverService: DriverService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
   save() {
@@ -23,7 +25,9 @@ export class LoginComponent implements OnInit {
       password: this.driver.password,
     };
     console.log(data);
-    this.driverService.createLogin(data).subscribe((res) => {console.log(res); this.router.navigate(['/information',])});
-    
+    this.driverService.createLogin(data).subscribe((res) => {
+      console.log(res);
+      this.router.navigate(['/information']);
+    });
   }
 }

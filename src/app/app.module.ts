@@ -14,6 +14,8 @@ import { AboutUsComponent } from './component/about-us/about-us.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,23 +35,28 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    RouterModule.forRoot([{path: 'user', component: UserComponent}, 
-                          {path: '', component:HomeComponent}, 
-                          {path: 'logIn', component: LoginComponent}, 
-                          {path: 'signUp', component: SignupComponent}, 
+    ReactiveFormsModule,
+    RouterModule.forRoot([{path: 'user', component: UserComponent},
+                          {path: '', component:HomeComponent},
+                          {path: 'logIn', component: LoginComponent},
+                          {path: 'signUp', component: SignupComponent},
                           {path: 'information', component: ComponentInformationComponent },
                           {path: 'AboutUs', component: AboutUsComponent }]),
 
 
 
     AgmCoreModule.forRoot({
-      apiKey : "AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
-    })
+
+      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
+    
+    }),
+
     
     
+    // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
   ],
   providers: [],
-  bootstrap: [AppComponent,HomeComponent],
+  bootstrap: [AppComponent,HomeComponent]
 })
 
 export class AppModule {}
