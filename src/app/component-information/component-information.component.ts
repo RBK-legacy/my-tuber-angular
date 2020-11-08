@@ -30,5 +30,6 @@ export class ComponentInformationComponent {
     this.driverService.request(this.obj)
     
   }
-
 }
+
+
