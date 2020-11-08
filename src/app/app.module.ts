@@ -25,7 +25,7 @@ import { DriversComponent } from './drivers/drivers.component';
     LoginComponent,
     ComponentInformationComponent,
      AboutUsComponent,
-    UserComponent
+    UserComponent,
     DriversComponent,
 
 
