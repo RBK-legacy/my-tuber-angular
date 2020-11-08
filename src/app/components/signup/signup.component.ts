@@ -38,11 +38,12 @@ export class SignupComponent implements OnInit {
       location : this.driver.location,
       km : this.driver.km
     }
-    console.log(data);
+    
     this.driverService.createRegister(data)
     .subscribe((res) => console.log(res));
     this.driverService.sendEmail(data)
     .subscribe((res) => {console.log(res); this.router.navigate(['/logIn',])})
+    console.log(data);
   };
 
 }

@@ -1,5 +1,5 @@
 div{
-    margin-left: 600px;
+    margin-left: 50px;
 }
 
 input[type=text] {
@@ -35,11 +35,11 @@ select {
 
 
 #btn {
-     background-color: orange;
+background-color: orange;
   border: none;
   color: white;
   padding: 15px 32px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   display: inline-block;
   font-size: 30px;

@@ -6,6 +6,10 @@ router.get('/', async (req, res) => {
     await Cars.findAll().then((users) => res.json(users))
   })
 
+  router.get('/car', async (req, res) => {
+  await Cars.findOne({where: {type: req.body.type}}).then((cars) => res.json(cars))
+  })
+
 router.post('/', async (req, res) => {
   await Cars.create({
     type : req.body.type,
@@ -15,5 +19,7 @@ router.post('/', async (req, res) => {
   })
   .then((cars) => res.json(cars))
 })
+
+
 
 module.exports = router ;  
