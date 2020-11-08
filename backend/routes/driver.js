@@ -15,12 +15,7 @@ dotenv.config();
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
-router.get('/specif',async(req,res) => {
-    await Drivers.findOne({  type :req.body.type })
-    .then((res)=> res.send(res))
-    .catch(err)
-    console.log (err)
-})
+
 
 // Get request the user find the drivers
 router.get('/:id', async (req, res) => {
