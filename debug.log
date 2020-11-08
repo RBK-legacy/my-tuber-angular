@@ -1,3 +1,5 @@
-[1106/010933.335:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
-[1108/121653.138:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin dâ€™accÃ¨s spÃ©cifiÃ© est introuvable. (0x3)
+
+[1106/010933.335:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d�acc�s sp�cifi� est introuvable. (0x3)
+[1108/115227.749:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1108/155200.585:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d�acc�s sp�cifi� est introuvable. (0x3)
 
