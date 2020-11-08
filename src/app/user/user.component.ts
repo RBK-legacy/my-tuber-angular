@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-user',
@@ -11,8 +13,13 @@ export class UserComponent  {
   
   form: FormGroup;
   orders = [];
+  value='';
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder , 
+
+    
+
+) {
     this.form = this.formBuilder.group({
       orders: ['']
     });
@@ -37,6 +44,7 @@ export class UserComponent  {
 
   submit() {
     console.log(this.form.value);
+   
   }
 
 }
