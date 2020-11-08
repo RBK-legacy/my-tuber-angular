@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { DriversComponent } from './drivers/drivers.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,14 @@ import { LoginComponent } from './components/login/login.component';
     SignupComponent,
     LoginComponent,
     ComponentInformationComponent,
-    AboutUsComponent,
+
+     AboutUsComponent,
     UserComponent,
+    DriversComponent,
+
+
+
+
   ],
 
   imports: [
@@ -32,20 +39,26 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    RouterModule.forRoot([
-      { path: 'user', component: UserComponent },
-      { path: '', component: HomeComponent },
-      { path: 'logIn', component: LoginComponent },
-      { path: 'signUp', component: SignupComponent },
-      { path: 'information', component: ComponentInformationComponent },
-      { path: 'AboutUs', component: AboutUsComponent },
-    ]),
+
+    RouterModule.forRoot([{path: 'user', component: UserComponent},
+                          {path: '', component:HomeComponent},
+                          {path: 'logIn', component: LoginComponent},
+                          {path: 'signUp', component: SignupComponent},
+                          {path: 'information', component: ComponentInformationComponent },
+                          {path: 'AboutUs', component: AboutUsComponent },
+                          {path:'driver', component: DriversComponent}]),
+
+
+
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc'
     }),
 
+
   ],
+
+   
 
   providers: [],
   bootstrap: [AppComponent, HomeComponent]

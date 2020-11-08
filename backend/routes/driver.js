@@ -7,6 +7,7 @@ const verifyToken = require('./verification')
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+const { threadId } = require('worker_threads');
 dotenv.config();
 
 
