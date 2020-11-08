@@ -22,4 +22,10 @@ export class DriverService {
   sendEmail(data): Observable<any> {
     return this.http.post(baseUrl + '/sendemail',data)
   }
+
+  request(data): Observable<any> {
+    return this.http.post(baseUrl + '/request/',data)
+  }
 }
+
+

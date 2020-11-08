@@ -6,19 +6,7 @@ import { UserComponent } from './user/user.component';
 
 
 
-import {HomeComponent} from "./home/home.component"
-const routes: Routes = [
-//   {path: 'home', component:HomeComponent},
-//   {path: 'user', component:UserComponent}
-//   // {path: 'find', component:findDriver}
-//   // {path: 'aboutUs', component:aboutUs}
-//   // {path: 'joinUs', component:joinUs}
-];
-
-
-
-
-
+const routes: Routes = [];
 
 
 
