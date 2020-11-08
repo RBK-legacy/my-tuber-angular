@@ -2,15 +2,18 @@
 <form [formGroup]="form" (ngSubmit)="submit()" >
   <input type="text" placeholder="Put your location" ><br><br>
 
-  <label for="orders">choose a car </label><br><br>
+  <label for="orders" class="car"> Choose a Type of Car :</label><br><br>
   
   <select >
+    <option value="0"> Type of Car </option>
     <option value="1">Confort car </option>
     <option value="2">Normal car </option>
     <option value="3">Safe car </option>
   </select>
   
   <br><br>
+  <br><br>
+
   <button id="btn">submit</button>
  
 </form>
