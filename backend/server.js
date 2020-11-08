@@ -11,6 +11,10 @@ const port = 5000;
 app.use("/drivers",require('./routes/driver'))
 app.use("/history",require('./routes/history'))
 app.use("/request",require('./routes/requests'))
+app.use("/car",require('./routes/cars'))
+
+app.use(express.static('.././dist/angular-tuber-app'));
+
 
 
 app.listen(port, () => {

@@ -20,14 +20,14 @@ import { DriversComponent } from './drivers/drivers.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ComponentInformationComponent,
+    HomeComponent,  
     SignupComponent,
     LoginComponent,
-
-    AboutUsComponent,
-    UserComponent,
+    ComponentInformationComponent,
+     AboutUsComponent,
+    UserComponent
     DriversComponent,
+
 
 
   ],
@@ -39,7 +39,6 @@ import { DriversComponent } from './drivers/drivers.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
     RouterModule.forRoot([{path: 'user', component: UserComponent},
                           {path: '', component:HomeComponent},
                           {path: 'logIn', component: LoginComponent},
@@ -54,16 +53,12 @@ import { DriversComponent } from './drivers/drivers.component';
 
       apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
 
-
-
-
-
-    })
+    }),
 
 
 
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent,HomeComponent]
 })

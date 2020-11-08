@@ -1,11 +1,24 @@
-
-<h1 class='title'>Tuber</h1>
-<button class='but1'>Available</button><br>
-<button class='but2'>Refrech request</button>
-<h3 class='t'>Availibility :</h3><button class='but3'>Accept</button>
-<button class='but4'>Do Not accept</button><br>
-
+<button class='but1' (click)='onClick1($event)'>Available</button><br>
+<button class='but2' (click)='onClick($event)'>Refrech request</button>
+<div *ngIf="show === true">
+<h3 class='t' >Availibility :</h3>
+<button class='but3' (click)='driverRequest($event)'>Accept</button><br>
+<button class='but4' (click)='driverRequest($event)'>Do Not accept</button><br>
+</div>
+<div Class='map'>
 <agm-map [latitude] ="36.8688529" [longitude] ="10.1353404">
-    <agm-marker [latitude] ="36.8688529" [longitude] ="10.1353404"></agm-marker>
-</agm-map>
 
+    <agm-marker [latitude] ="36.8688529" [longitude] ="10.1353404" ></agm-marker>
+    <agm-marker [latitude] ="36.8762932" [longitude] ="10.2538732"></agm-marker>
+    <agm-marker [latitude] ="36.8929963" [longitude] ="10.2691842"></agm-marker>
+    <agm-marker [latitude] ="36.8004033" [longitude] ="10.1844308"></agm-marker>
+    <agm-marker [latitude] ="37.281106" [longitude] ="9.8439947"></agm-marker>
+    <agm-marker [latitude] ="36.7465169" [longitude] ="10.2171373"></agm-marker>
+    <agm-marker [latitude] ="36.681864" [longitude] ="10.3522964"></agm-marker> 
+    <agm-marker [latitude] ="36.7251347" [longitude] ="10.3337211"></agm-marker> 
+    <agm-marker [latitude] ="36.4058025" [longitude] ="10.6120205"></agm-marker> 
+    <agm-marker [latitude] ="36.6498446" [longitude] ="9.606471"></agm-marker> 
+    <agm-marker [latitude] ="36.729743" [longitude] ="9.1700927"></agm-marker>    
+  
+</agm-map>
+</div>
