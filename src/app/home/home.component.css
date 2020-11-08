@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
+   
   }
 h1{
     left: 0;
@@ -65,3 +66,4 @@ fa-icon{
     top: 50%;
     width: 100%
     }
+

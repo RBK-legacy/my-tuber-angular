@@ -9,13 +9,19 @@ const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
 dotenv.config();
 
+
+
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
 
+
+
 router.get('/:id', async (req, res) => {
   await Drivers.findByPk(req.params.id).then((users) => res.json(users))
 })
+
+
 
 router.post('/signup', async (req, res) => {
   const salt = await bcrypt.genSalt(10);
@@ -23,6 +29,8 @@ router.post('/signup', async (req, res) => {
   await Drivers.create({ firstName: req.body.firstName, lastName: req.body.lastName, password: hashPassword, email: req.body.email, yearOfBirth: req.body.yearOfBirth, idCard: req.body.idCard, driveLicense: req.body.driveLicense, car: req.body.car, location: req.body.location, km: req.body.km })
     .then((driver) => res.json(driver))
 })
+
+
 
 router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
@@ -32,6 +40,8 @@ router.post('/login', async (req, res) => {
   const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
   res.header('auth-token', token).send(token)
 })
+
+
 
 router.post('/sendemail', async (req, res) => {
     await Doctors.findAll({ where: { email: req.body.email } }).then((obj) => {
