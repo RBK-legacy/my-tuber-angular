@@ -37,8 +37,10 @@ router.post('/login', async (req, res) => {
   if (!driver) return res.send('email is wrong')
   const validPass = await bcrypt.compare(req.body.password, driver.password)
   if (!validPass) return res.status(400).send('password is wrong')
-  const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
-  res.header('auth-token', token).send(token)
+  console.log(token)
+  console.log(driver)
+//   const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
+//   res.header('auth-token', token).send(token)
 })
 
 
