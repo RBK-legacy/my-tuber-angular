@@ -34,6 +34,7 @@ router.post('/signup', async (req, res) => {
   const hashPassword = await bcrypt.hash(req.body.password, salt)
   await Drivers.create({ firstName: req.body.firstName, lastName: req.body.lastName, password: hashPassword, email: req.body.email, yearOfBirth: req.body.yearOfBirth, idCard: req.body.idCard, driveLicense: req.body.driveLicense, car: req.body.car, location: req.body.location, km: req.body.km })
     .then((driver) => res.json(driver))
+    .catch(err=>console.log(err));
 })
 
 

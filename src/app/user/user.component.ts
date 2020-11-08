@@ -16,12 +16,7 @@ export class UserComponent  {
   orders = [];
   value='';
 
-  constructor(private formBuilder: FormBuilder , 
-
-    
-
-
-) {
+  
 
   lat: string='';
   lng: string='';
