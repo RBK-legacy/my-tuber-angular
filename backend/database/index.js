@@ -2,7 +2,8 @@ const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('tuber1', 'root', '123456', {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    logging: false
 
 
 });
@@ -10,7 +11,7 @@ const sequelize = new Sequelize('tuber1', 'root', '123456', {
 sequelize
     .authenticate()
     .then(() => {
-        console.log('Connection has been established successfully.');
+        console.log('Connection has been established successfully');
     })
     .catch(err => {
         console.error('Unable to connect to the database:', err);
