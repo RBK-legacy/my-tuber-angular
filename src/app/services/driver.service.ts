@@ -26,6 +26,10 @@ export class DriverService {
   request(data): Observable<any> {
     return this.http.post(baseUrl + '/request/',data)
   }
+
+  getCars(options){
+    return this.http.post('http://localhost:5000/car/car',options)
+  }
 }
 
 
