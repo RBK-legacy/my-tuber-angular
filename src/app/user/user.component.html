@@ -1,23 +1,22 @@
 <div >
 
-<form [formGroup]="form" (ngSubmit)="submit()" >
   <input type="text" placeholder="Put your location" ><br><br>
 
   <label for="orders" class="car"> Choose a Type of Car :</label><br><br>
   
-  <select >
+  <select (change)="getType($event)">
     <option value="0"> Type of Car </option>
-    <option value="1">Confort car </option>
-    <option value="2">Normal car </option>
-    <option value="3">Safe car </option>
+    <option value="Comfort cars">Comfort car </option>
+    <option value="Normal cars">Normal car </option>
+    <option value="Safe cars">Safe car </option>
   </select>
   
   <br><br>
   <br><br>
 
-  <button id="btn" routerLink="/driver">submit</button>
+  <button id="btn" (click) = "sendType()">submit</button>
  
-</form>
+<!-- routerLink="/driver" -->
 </div>
 
 <agm-map [latitude] ="36.8688529" [longitude] ="10.1353404">

@@ -9,7 +9,9 @@ import {Router}  from '@angular/router'
 export class AppComponent {
   // myImage: string = "assets/images/car1.png "
 constructor(private route : Router){}
-  refresh(event){
+ 
+
+refresh(event){
   this.route.navigate([''])
   }
 }

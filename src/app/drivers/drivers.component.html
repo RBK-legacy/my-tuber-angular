@@ -2,3 +2,11 @@
     <h1>car types </h1>
     <!-- <img src="https://i.pinimg.com/736x/a7/41/fc/a741fcc0609a2b21ab5fcff0351032bf.jpg"> -->
   </div>
+
+  <div *ngFor= "let info of allInfos">
+        
+        <h1>{{info.type}}</h1>
+         <img src={{info.image}} alt=""/>
+        <h2>{{info.price}} DT</h2> 
+        <h1>{{info.description}}</h1>
+  </div>

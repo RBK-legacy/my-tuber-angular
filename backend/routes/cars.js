@@ -6,8 +6,8 @@ router.get('/', async (req, res) => {
     await Cars.findAll().then((users) => res.json(users))
   })
 
-  router.get('/car', async (req, res) => {
-  await Cars.findOne({where: {type: req.body.type}}).then((cars) => res.json(cars))
+  router.post('/car', async (req, res) => {
+  await Cars.findAll({where: {type: req.body.type}}).then((cars) => res.json(cars))
   })
 
 router.post('/', async (req, res) => {
