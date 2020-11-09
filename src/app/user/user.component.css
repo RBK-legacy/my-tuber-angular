@@ -33,6 +33,7 @@ select {
     padding: 20px;
 }
 
+
 #btn {
      background-color: orange;
   border: none;
@@ -51,3 +52,8 @@ select {
 
 
 
+agm-map{
+    height: 500px;
+    width: 2300px;
+
+}

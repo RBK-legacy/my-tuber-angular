@@ -13,18 +13,22 @@ import { UserComponent } from './user/user.component';
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { DriversComponent } from './drivers/drivers.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ComponentInformationComponent,
+    HomeComponent,  
     SignupComponent,
     LoginComponent,
-    AboutUsComponent,
-    UserComponent,
+    ComponentInformationComponent,
+     AboutUsComponent,
+    UserComponent
+    DriversComponent,
+
+
 
   ],
 
@@ -35,26 +39,26 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule,
     RouterModule.forRoot([{path: 'user', component: UserComponent},
                           {path: '', component:HomeComponent},
                           {path: 'logIn', component: LoginComponent},
                           {path: 'signUp', component: SignupComponent},
                           {path: 'information', component: ComponentInformationComponent },
-                          {path: 'AboutUs', component: AboutUsComponent }]),
+                          {path: 'AboutUs', component: AboutUsComponent },
+                          {path:'driver', component: DriversComponent}]),
 
 
 
     AgmCoreModule.forRoot({
 
-      apiKey:"AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM"
-    
+      apiKey:"AIzaSyAVwYCGUMKCWJKGvkndkPBsGdPGqb_-Nvc"
+
     }),
 
-    
-    
+
+
     // AIzaSyD-vPPQ4Y-W_BkFVxdkD1IOg2db-vdx-rM
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent,HomeComponent]
 })

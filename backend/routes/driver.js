@@ -7,6 +7,7 @@ const verifyToken = require('./verification')
 const dotenv = require('dotenv');
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+const { threadId } = require('worker_threads');
 dotenv.config();
 
 
@@ -14,7 +15,12 @@ dotenv.config();
 router.get('/', async (req, res) => {
   await Drivers.findAll().then((users) => res.json(users))
 })
-
+router.get('/specif',async(req,res) => {
+    await Drivers.findOne({  type :req.body.type })
+    .then((res)=> res.send(res))
+    .catch(err)
+    console.log (err)
+})
 
 // Get request the user find the drivers
 router.get('/:id', async (req, res) => {
@@ -34,12 +40,11 @@ router.post('/signup', async (req, res) => {
 // Post request driver to signIn
 router.post('/login', async (req, res) => {
   const driver = await Drivers.findOne({ where: { email: req.body.email } })
-  if (!driver) return res.send('email is wrong')
+  if (!driver) return res.send({"status" : 404})
   const validPass = await bcrypt.compare(req.body.password, driver.password)
-  if (!validPass) return res.json({"message" : "signup"})
-  res.json("logged in");
-  // const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
-  // res.header('auth-token', token).send(token)
+  if (!validPass) return res.send({"status" : 500})
+  const token = jwt.sign({ id: Drivers.id }, process.env.TOKEN)
+  res.header('auth-token', token).send({"token" : token , "id" : driver.id})
 
 })
 
@@ -56,7 +61,7 @@ router.post('/sendemail', async (req, res) => {
                     host: "smtp.gmail.com",
                     auth: {
                         user: "tuber.tunisie@gmail.com",
-                        pass: "tuber05112020",
+                        pass: "tuber05112020"
                     },
                     tls: {
                         rejectUnauthorized: false,
