@@ -62,7 +62,7 @@ import { DriversComponent } from './drivers/drivers.component';
 
    
 
-  providers: [],
+  providers: [UserComponent],
   bootstrap: [AppComponent, HomeComponent]
 
 })
