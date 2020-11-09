@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MapsService } from '../maps.service';
 import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -16,12 +16,6 @@ export class UserComponent  {
   orders = [];
   value='';
 
-  constructor(private formBuilder: FormBuilder , 
-
-    
-
-
-) {
 
   lat: string='';
   lng: string='';
@@ -48,7 +42,7 @@ export class UserComponent  {
       { id: '2', name: 'Confort car' },
       { id: '3', name: 'Safe car' },
       
-    ];
+    ]
   }
 
   submit() {
